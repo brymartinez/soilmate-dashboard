@@ -15,17 +15,15 @@ export const SideNavItemComponent = ({ item }: { item: SideNavItem }) => {
   };
 
   return (
-    <div className="w-full text-[#67707F] font-normal">
+    <div className="w-full font-normal text-primary">
       <div
         onClick={toggleSubMenu}
-        className={`flex items-center space-x-2 p-2 rounded-md hover:bg-zinc-100 cursor-pointer ${item.path === pathname ? 'bg-zinc-100' : ''
-          }`}
+        className={`flex items-center space-x-2 p-2 rounded-md hover:bg-zinc-100 cursor-pointer ${item.path === pathname ? '!text-green-500' : ''
+        }`}
       >
         {item.icon}
         <span className="text-base flex-1">{item.title}</span>
-        {item.submenu && (
-          <Icon name={subMenuOpen ? ICONS["chevron-down"] : ICONS["chevron-right"]} className="w-4 h-4" />
-        )}
+        <Icon name={ICONS.chevronRight} className="w-4 h-4" />
       </div>
 
       {subMenuOpen && item.submenu && (
@@ -36,7 +34,7 @@ export const SideNavItemComponent = ({ item }: { item: SideNavItem }) => {
                 key={idx}
                 href={subItem.path}
                 className={`${subItem.path === pathname ? 'font-bold' : ''
-                  }`}
+                }`}
               >
                 <span>{subItem.title}</span>
               </a>

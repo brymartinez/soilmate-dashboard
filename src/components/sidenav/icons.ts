@@ -1,13 +1,22 @@
-import { faHome, faFolder, faEnvelope, faCog, faQuestionCircle, faChevronDown, faChevronRight, faUser, faLock } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faQuestionCircle, faUser, faGauge, faUsers, faTruck, faMoneyBill, faRectangleList, faChartColumn, faTrophy, faBarcode, faListNumeric, faMapLocation, faHandshake, faMobile, faNewspaper, faAnchor, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 export const ICONS = {
-  home: faHome,
-  folder: faFolder,
-  mail: faEnvelope,
-  settings: faCog,
-  "help-circle": faQuestionCircle,
-  "chevron-down": faChevronDown,
-  "chevron-right": faChevronRight,
-  account: faUser,
-  privacy: faLock,
+  dashboard: faGauge,
+  users: faUsers,
+  inquiries: faEnvelope,
+  bookings: faTruck,
+  payments: faMoneyBill,
+  subscriptions: faRectangleList,
+  reports: faChartColumn,
+  rewards: faTrophy,
+  promos: faBarcode,
+  subscriptionPlans: faListNumeric,
+  routes: faMapLocation,
+  partners: faHandshake,
+  metrics: faMobile,
+  resources: faNewspaper,
+  faqs: faQuestionCircle,
+  administrators: faAnchor,
+  loadUser: faUser,
+  chevronRight: faChevronRight,
 };

@@ -2,7 +2,7 @@
 'use client';
 
 import React from 'react';
-import { SIDENAV_ITEMS } from './SideNav-items';
+import { SIDENAV_ITEMS } from './data';
 import { SideNavItemComponent as SideNavItem } from './SideNavItem';
 
 const SideNav = () => {

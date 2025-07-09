@@ -4,7 +4,7 @@ import { useAuth } from '@/context/AuthContext';
 import { useState } from 'react';
 
 export default function LoginComponent() {
-  const { login } = useAuth();
+  const { login, loading } = useAuth();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -26,10 +26,11 @@ export default function LoginComponent() {
           className="mb-6 px-3 py-2 border border-gray-300 rounded w-full focus:outline-none focus:ring-2 focus:ring-green-400"
         />
         <button
-          className="bg-green-500 hover:bg-green-600 rounded-md px-5 py-2 text-lg my-1 flex transition duration-150 ease-in-out text-white focus:outline-none focus:ring-2 focus:ring-offset-2 justify-center cursor-pointer items-center whitespace-nowrap w-full"
-          onClick={() => login({username, password})}
+          className="bg-green-500 hover:bg-green-600 rounded-md px-5 py-2 text-lg my-1 flex transition duration-150 ease-in-out text-white focus:outline-none focus:ring-2 focus:ring-offset-2 justify-center cursor-pointer items-center whitespace-nowrap w-full disabled:opacity-50 disabled:cursor-not-allowed"
+          onClick={() => login({ username, password })}
+          disabled={loading}
         >
-          Sign In
+          {loading ? 'Signing In...' : 'Sign In'}
         </button>
       </div>
     </div>

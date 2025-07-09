@@ -32,6 +32,10 @@
   font-display: swap;
 }
 
+.text-primary {
+  @apply text-[#67707F];
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

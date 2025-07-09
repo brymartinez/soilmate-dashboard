@@ -4,12 +4,13 @@ import SideNav from "@/components/sidenav/SideNav";
 import { useAuth } from "@/context/AuthContext";
 
 export default function DashboardPage() {
+
   const { logout } = useAuth();
 
   return (
-    <div className="flex min-h-screen">
+    <div className="flex min-h-screen text-primary">
       <SideNav />
-      <div className="flex flex-col flex-1 items-center justify-center">
+      <div className="flex flex-col flex-1 items-center justify-center bg-white">
         <h1 className="text-4xl font-bold">Dashboard</h1>
         <p className="mt-4">Welcome to your dashboard!</p>
         <button
