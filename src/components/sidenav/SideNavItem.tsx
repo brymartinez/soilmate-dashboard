@@ -1,13 +1,19 @@
 'use client';
 
-import React, { useState } from 'react';
-import { SideNavItem } from './types';
+import React, { ReactNode, useState } from 'react';
 import { Icon } from '@/components/ui/icon';
-import { ICONS } from './icons';
-
 import { usePathname } from 'next/navigation';
+import { ICONS } from './SideNav';
 
-export const SideNavItemComponent = ({ item }: { item: SideNavItem }) => {
+export type SideNavItemType = {
+  title: string;
+  path: string;
+  icon?: ReactNode;
+  submenu?: boolean;
+  subMenuItems?: SideNavItemType[];
+};
+
+export const SideNavItem = ({ item }: { item: SideNavItemType }) => {
   const pathname = usePathname();
   const [subMenuOpen, setSubMenuOpen] = useState(false);
   const toggleSubMenu = () => {
@@ -44,4 +50,4 @@ export const SideNavItemComponent = ({ item }: { item: SideNavItem }) => {
   );
 };
 
-export default SideNavItemComponent;
+export default SideNavItem;

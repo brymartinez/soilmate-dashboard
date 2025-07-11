@@ -2,8 +2,79 @@
 'use client';
 
 import React from 'react';
-import { SIDENAV_ITEMS } from './data';
-import { SideNavItemComponent as SideNavItem } from './SideNavItem';
+import { SideNavItem, SideNavItemType } from './SideNavItem';
+import { Icon } from '../ui/icon';
+import { faEnvelope, faQuestionCircle, faUser, faGauge, faUsers, faTruck, faMoneyBill, faRectangleList, faChartColumn, faTrophy, faBarcode, faListNumeric, faMapLocation, faHandshake, faMobile, faNewspaper, faAnchor, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+
+export const ICONS = {
+  dashboard: faGauge,
+  users: faUsers,
+  inquiries: faEnvelope,
+  bookings: faTruck,
+  payments: faMoneyBill,
+  subscriptions: faRectangleList,
+  reports: faChartColumn,
+  rewards: faTrophy,
+  promos: faBarcode,
+  subscriptionPlans: faListNumeric,
+  routes: faMapLocation,
+  partners: faHandshake,
+  metrics: faMobile,
+  resources: faNewspaper,
+  faqs: faQuestionCircle,
+  administrators: faAnchor,
+  loadUser: faUser,
+  chevronRight: faChevronRight,
+};
+
+
+const SIDENAV_ITEMS: SideNavItemType[] = [
+  {
+    title: 'Dashboard',
+    path: '/',
+    icon: <Icon name={ICONS.dashboard} className="w-5 h-5" />,
+  },
+  {
+    title: 'Users',
+    path: '/users',
+    icon: <Icon name={ICONS.users} className="w-5 h-5" />,
+  },
+  {
+    title: 'Inquiries',
+    path: '/inquiries',
+    icon: <Icon name={ICONS.inquiries} className="w-5 h-5" />,
+  },
+  {
+    title: 'Bookings',
+    path: '/bookings',
+    icon: <Icon name={ICONS.bookings} className="w-5 h-5" />,
+  },
+  {
+    title: 'Payments',
+    path: '/payments',
+    icon: <Icon name={ICONS.payments} className="w-5 h-5" />,
+  },
+  {
+    title: 'Subscriptions',
+    path: '/subscriptions',
+    icon: <Icon name={ICONS.subscriptions} className="w-5 h-5" />,
+  },
+  {
+    title: 'Reports',
+    path: '/reports',
+    icon: <Icon name={ICONS.reports} className="w-5 h-5" />,
+  },
+  {
+    title: 'Rewards',
+    path: '/rewards',
+    icon: <Icon name={ICONS.rewards} className="w-5 h-5" />,
+  },
+  {
+    title: 'Promos',
+    path: '/promos',
+    icon: <Icon name={ICONS.promos} className="w-5 h-5" />,
+  },
+];
 
 const SideNav = () => {
   return (
