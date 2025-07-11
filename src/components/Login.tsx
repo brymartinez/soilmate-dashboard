@@ -30,10 +30,9 @@ export function LoginComponent() {
     setLoading(true);
     try {
       await signIn({ username: data.username, password: data.password });
-      router.push('/dashboard');
+      router.push('/');
     } catch (error) {
       // TODO: show error to user
-      // eslint-disable-next-line no-console
       console.log('error signing in', error);
       setLoading(false);
     }

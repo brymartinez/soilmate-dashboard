@@ -1,6 +1,6 @@
 
 import { LoginComponent } from "@/components/Login";
-import DashboardPage from "@/app/dashboard/page";
+import DashboardPage from "@/app/(dashboard)/page";
 import { Amplify } from "aws-amplify";
 import amplifyconfig from "../amplifyconfiguration.json";
 import { fetchUserFromServer } from "@/server/amplify";
