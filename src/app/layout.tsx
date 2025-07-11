@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import ConfigureAmplifyClientSide from "../components/ConfigureAmplifyClientSide";
+import { JSX } from "react";
 
 export const metadata: Metadata = {
   title: "Soilmate Dashboard",
@@ -7,12 +9,7 @@ export const metadata: Metadata = {
 };
 
 
-import { Amplify } from "aws-amplify";
-import ConfigureAmplifyClientSide from "../components/ConfigureAmplifyClientSide";
-import config from "../amplifyconfiguration.json";
-import { JSX } from "react";
 
-Amplify.configure({ ...config }, { ssr: true });
 export default function RootLayout({
   children,
 }: {
