@@ -1,5 +1,5 @@
 
-import { Icon } from '@/components/Icon';
+import { Icon } from '@/components/ui/icon';
 import { ICONS } from './icons';
 import { SideNavItem } from './types';
 

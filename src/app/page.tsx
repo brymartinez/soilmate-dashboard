@@ -1,19 +1,18 @@
-"use client";
 
-import { useAuth } from "@/context/AuthContext";
-import LoginComponent from "@/components/Login";
-import LoadingSpinner from "@/components/LoadingSpinner";
+import { LoginComponent } from "@/components/Login";
 import DashboardPage from "@/app/dashboard/page";
 import { Amplify } from "aws-amplify";
 import amplifyconfig from "../amplifyconfiguration.json";
+import { fetchUserFromServer } from "@/server/amplify";
 Amplify.configure(amplifyconfig);
 
-export default function Home() {
-  const { isAuthenticated, loading } = useAuth();
+export default async function Home() {
 
-  if (loading) {
-    return <LoadingSpinner />;
+  const user = await fetchUserFromServer();
+
+  if (user) {
+    return <DashboardPage />;
   } else {
-    return isAuthenticated ? <DashboardPage /> : <LoginComponent />;
+    return <LoginComponent />;
   }
 }

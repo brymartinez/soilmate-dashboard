@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { SideNavItem } from './types';
-import { Icon } from '@/components/Icon';
+import { Icon } from '@/components/ui/icon';
 import { ICONS } from './icons';
 
 import { usePathname } from 'next/navigation';
@@ -18,8 +18,7 @@ export const SideNavItemComponent = ({ item }: { item: SideNavItem }) => {
     <div className="w-full font-normal text-primary">
       <div
         onClick={toggleSubMenu}
-        className={`flex items-center space-x-2 p-2 rounded-md hover:bg-zinc-100 cursor-pointer ${item.path === pathname ? '!text-green-500' : ''
-        }`}
+        className={`flex items-center space-x-2 p-2 rounded-md hover:bg-zinc-100 cursor-pointer ${item.path === pathname ? '!text-green-500' : ''}`}
       >
         {item.icon}
         <span className="text-base flex-1">{item.title}</span>
@@ -33,8 +32,7 @@ export const SideNavItemComponent = ({ item }: { item: SideNavItem }) => {
               <a
                 key={idx}
                 href={subItem.path}
-                className={`${subItem.path === pathname ? 'font-bold' : ''
-                }`}
+                className={`${subItem.path === pathname ? 'font-bold' : ''}`}
               >
                 <span>{subItem.title}</span>
               </a>
