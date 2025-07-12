@@ -1,10 +1,13 @@
 "use client";
+import React, { useState } from "react";
+import HeaderNav from "@/components/HeaderNav";
 import SideNav from "@/components/sidenav/SideNav";
 import { Table } from "@/components/ui/table";
 import { Card } from "@/components/ui/card";
 import { faTruck, faMoneyBill1, faRectangleList, faTrophy } from "@fortawesome/free-solid-svg-icons";
 
 export default function DashboardPage() {
+
   const cards = [
     {
       title: "92",
@@ -32,11 +35,14 @@ export default function DashboardPage() {
       icon: faTrophy,
     },
   ];
+  const [sideNavOpen, setSideNavOpen] = useState(false);
+
   return (
-    <div className="flex min-h-screen text-primary">
-      <SideNav />
+    <div className="flex flex-col min-h-screen text-primary">
+      <HeaderNav onBurgerClick={() => setSideNavOpen((open) => !open)} />
+      <SideNav isOpen={sideNavOpen} />
       <div className="flex flex-col flex-1 items-start justify-start bg-white md:ml-60">
-        <div className="px-10 pt-9">
+        <div className="px-6 pt-8">
           <h2 className="font-medium text-4xl mb-12">Dashboard</h2>
         </div>
         <div className="flex flex-row flex-wrap float-left mb-12 w-full px-4 py-4">
@@ -66,3 +72,4 @@ export default function DashboardPage() {
     </div>
   );
 }
+

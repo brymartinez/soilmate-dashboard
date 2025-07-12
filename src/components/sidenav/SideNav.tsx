@@ -5,6 +5,7 @@ import React from 'react';
 import { SideNavItem, SideNavItemType } from './SideNavItem';
 import { Icon } from '../ui/icon';
 import { faEnvelope, faQuestionCircle, faUser, faGauge, faUsers, faTruck, faMoneyBill, faRectangleList, faChartColumn, faTrophy, faBarcode, faListNumeric, faMapLocation, faHandshake, faMobile, faNewspaper, faAnchor, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import Image from 'next/image';
 
 export const ICONS = {
   dashboard: faGauge,
@@ -76,13 +77,14 @@ const SIDENAV_ITEMS: SideNavItemType[] = [
   },
 ];
 
-const SideNav = () => {
+const SideNav = ({ isOpen }: { isOpen: boolean }) => {
   return (
-    <div className="md:w-60 bg-white h-screen flex-1 fixed border-r border-zinc-200 hidden md:flex">
-      <div className="flex flex-col space-y-6 w-full">
-        <div className="flex flex-row space-x-3 items-center justify-center md:justify-start md:px-6 border-b border-zinc-200 h-12 w-full">
-          <span className="h-7 w-7 bg-zinc-300 rounded-lg" />
-          <span className="font-bold text-xl hidden md:flex">Logo</span>
+    <div className="md:w-60 bg-white h-full fixed top-0 left-0 z-40 border-r border-zinc-200 block">
+      <div className="flex flex-col w-full">
+        <div className="flex flex-row items-center gap-2 font-bold uppercase text-lg select-none p-4 border-b border-gray-300 h-[64px] w-full">
+          <Image src="/soilmate-logo.png" width={20} height={20} alt="Soilmate Logo" className="object-contain w-5 h-5 mr-2" />
+          <span className="text-green-400">Soil</span>
+          <span className="text-yellow-500">Mate</span>
         </div>
 
         <div className="flex flex-col space-y-2 md:px-6">
