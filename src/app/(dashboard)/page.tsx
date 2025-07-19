@@ -42,8 +42,8 @@ export default function DashboardPage() {
       <HeaderNav onBurgerClick={() => setSideNavOpen((open) => !open)} />
       <SideNav isOpen={sideNavOpen} />
       <div className="flex flex-col flex-1 items-start justify-start bg-white md:ml-60">
-        <div className="px-6 pt-8">
-          <h2 className="font-medium text-4xl mb-12">Dashboard</h2>
+        <div className="px-6 pt-4">
+          <h2 className="font-medium text-4xl mb-8">Dashboard</h2>
         </div>
         <div className="flex flex-row flex-wrap float-left mb-12 w-full px-4 py-4">
           {cards.map((card) => (

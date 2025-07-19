@@ -87,7 +87,7 @@ const SideNav = ({ isOpen }: { isOpen: boolean }) => {
           <span className="text-yellow-500">Mate</span>
         </div>
 
-        <div className="flex flex-col space-y-2 md:px-6">
+        <div className="flex flex-col space-y-2 md:px-6 pt-4">
           {SIDENAV_ITEMS.map((item, idx) => {
             return <SideNavItem key={idx} item={item} />;
           })}
