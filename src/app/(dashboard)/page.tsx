@@ -52,7 +52,7 @@ export default function DashboardPage() {
             </div>
           ))}
         </div>
-        <div className="w-full px-4 py-4 md:px-8">
+        <div className="w-full px-4 py-4 md:px-6">
           <Table
             headers={[
               { label: 'Name', key: 'name', sortable: true },

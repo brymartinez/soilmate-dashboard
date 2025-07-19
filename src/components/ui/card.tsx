@@ -27,7 +27,7 @@ export function Card({
   return (
     <div
       className={cn(
-        "flex flex-row h-full py-8 px-5 mx-3 gap-5 rounded-lg items-center justify-between shadow-lg", className
+        "flex flex-row h-full py-8 px-5 mx-2 gap-5 rounded-lg items-center justify-between shadow-lg", className
       )}
       {...props}
     >
